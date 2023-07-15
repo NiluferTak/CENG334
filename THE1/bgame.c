@@ -223,7 +223,7 @@ int main(){
                 im message ;
                 if (pollfds.revents & POLLIN)
                 {
-                    // printf("read_data ya geldi");
+                    
                     
                     int read_result = read_data(bombpipes[i][0],&message);
                     if (read_result == -1)
@@ -262,7 +262,7 @@ int main(){
                     //check if there is a bomber in the radius of bomb. If there is, bomber dies.
                     for (int b = 0; b < bomber_count; b++)
                     {
-                        //bomb position i hep   0 0 oluyor nedennnnn
+                        
                         // printf("bomber count %d\n", bomber_count);
                         // printf("radius %d\n",bomb_radius);
                         // // printf("DIEEEEEE");
@@ -333,9 +333,9 @@ int main(){
                         }
                     }
 
-                    //BURALARDA SORUN VARR DUZELTTT
+                    
                     // only one remains
-                    // 1 kisi kaldi,patlamada olmedi,sondan bir onceki request atmadi ama onemi yok.
+                    
                     if (deadpeople == bomber_count_initial - 1)
                     {
 
@@ -346,8 +346,7 @@ int main(){
                         // printf("%d\n",winner.position.y);
                         // /* code */
                     }
-                    // kimse kalmadi ama son iki kisi request atamadan farkli patlamalarda olduler.digerleri coktan oldu request atip gittiler
-                    //en son olen kazandi.
+                    
                     if (deadpeople == bomber_count_initial && bombers[0].killer_pid != bombers[1].killer_pid)
                     {
                         // printf("bomber count is what : %d\n",bomber_count);
@@ -360,7 +359,7 @@ int main(){
                     }
                     
                     
-                    // geri kalan herkes ayni patlamada oldu ve kimse request atmadı
+                    
                     if(deadpeople == bomber_count_initial && bombers[0].killer_pid == bombers[1].killer_pid){
                         // if all dead bomber's killer pid is same, winner is the bomber that is farthest from the bomb position
                         
